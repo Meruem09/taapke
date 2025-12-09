@@ -1,8 +1,18 @@
+"use client"
+
+import { useRouter } from "next/navigation";
 import Button1 from "./components/buttons/button1";
 import Button2 from "./components/buttons/button2";
 
 
 export default function Home() {
+  const router  = useRouter();
+  const handleMain = (): void => {
+    router.push("/main");
+  }
+
+
+
   return (
     
     <div className="w-full h-screen flex flex-col justify-center items-center ">
@@ -31,7 +41,7 @@ export default function Home() {
       </div>
       <span className=" font-inria-serif text-4xl text-gray-400">why write assignments when ai can do it</span>
       <div className=" flex mt-4 gap-4">
-        <Button1 btn_name="Get Started"/>
+        <Button1 btn_name="Get Started" onClick={handleMain}/>
         <Button2 btn_name="See how it works"/>
       </div>
     </div>
